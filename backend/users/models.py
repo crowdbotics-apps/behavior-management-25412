@@ -18,6 +18,7 @@ class User(AbstractUser):
     This model represents the User instance of the system, login system and
     everything that relates with an `User` is represented by this model.
     """
+
     name = models.CharField(
         null=True,
         blank=True,
