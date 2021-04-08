@@ -45,3 +45,11 @@ class HomePage(models.Model):
     @property
     def field(self):
         return "body"
+
+
+class OwnedModel(models.Model):
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        abstract = True

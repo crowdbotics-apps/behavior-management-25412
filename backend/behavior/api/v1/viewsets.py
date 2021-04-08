@@ -12,6 +12,9 @@ class BehaviorViewSet(viewsets.ModelViewSet):
     )
     queryset = Behavior.objects.all()
 
+    def perform_create(self, serializer):
+        serializer.save(creator=self.request.user)
+
 
 class OriginatorViewSet(viewsets.ModelViewSet):
     serializer_class = OriginatorSerializer
