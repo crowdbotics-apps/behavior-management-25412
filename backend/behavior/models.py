@@ -7,6 +7,10 @@ from home.models import OwnedModel
 
 
 class Behavior(OwnedModel):
+    owner = models.ForeignKey(
+        'users.User', related_name="behaviors", on_delete=models.PROTECT,
+        verbose_name=_("Responsável"),
+    )
     date = models.DateTimeField()
     trigger = models.CharField(
         _("Gatilho"),
